@@ -1,11 +1,13 @@
 const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
+
 const bcrypt = require('bcrypt');
-const Charity = require('./charity');
+const Fundraiser = require('./fundraiser');
 const Donation = require('./donation');
 
 const userSchema = new Schema({
+
     firstName: {
         type: String,
         required: true,
@@ -26,7 +28,23 @@ const userSchema = new Schema({
         required: true,
         minlength: 5
     },
-    charity: [Charity.schema],
+    fundraiser: [Fundraiser.schema],
     donation: [Donation.schema]
 });
 
+userSchema.pre('save', async function (next) {
+    if (this.inNew || this.isModified('password')) {
+        const saltRounds = 10;
+        this.password = await bcrypt.hash(this.password, saltRounds);
+    }
+
+    next();
+});
+
+userSchema.methods.isCorrectPassword = async function (password) {
+    return await bcrypt.compare(password, this.password);
+};
+
+const User = mongoose.mondel('user', userSchema);
+
+module.exports = User;
