@@ -18,6 +18,7 @@ import DonationHistory from './pages/DonationHistory';
 import Success from './pages/Success';
 import CreateFundraiser from './pages/CreateFundraiser';
 import Donate from './pages/Donate';
+import Footer from './components/Footer';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -57,6 +58,7 @@ function App() {
               <Route component={NoMatch} />
             </Switch>
           </StoreProvider>
+          <Footer />
         </div>
       </Router>
     </ApolloProvider>
