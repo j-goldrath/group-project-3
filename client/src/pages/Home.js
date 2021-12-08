@@ -1,11 +1,11 @@
-import FundraiserList from "../components/FundraiserList";
+// import FundraiserList from "../components/FundraiserList";
 
-const Home = () => {
-    return (
-        <div className="container">
-            <FundraiserList />
-        </div>
-    );
-};
+// const Home = () => {
+//     return (
+//         <div className="container">
+//             <FundraiserList />
+//         </div>
+//     );
+// };
 
-export default Home;
+// export default Home;
