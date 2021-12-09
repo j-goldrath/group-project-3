@@ -29,8 +29,8 @@ const userSchema = new Schema({
         required: true,
         minlength: 5
     },
-    fundraiser: [Fundraiser.schema],
-    donation: [Donation.schema]
+    fundraisers: [Fundraiser.schema],
+    donations: [Donation.schema]
 });
 
 userSchema.pre('save', async function (next) {
