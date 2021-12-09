@@ -1,48 +1,78 @@
-export function idbPromise(siteName, method, object) {
-    return new Promise((resolve, reject) => {
-        const request = window.indexedDB.open('helpr', 1);
-        let db, tx, site;
-        request.onupgradeneeded = function (e) {
-            const db = request.result;
-            db.createObjectStore('fundraiser', { keyPatch: '_id' });
-            db.createObjectStore('donations', { keyPath: '_id' });
-        };
+import { gql } from '@apollo/client';
 
-        request.onerror = function (e) {
-            console.log('There was an error')
-        };
-
-        request.onsuccess = function (e) {
-            db = request.result;
-            tx = db.transaction(siteName, 'readwrite');
-            site = tx.objectStore(siteName);
-
-            db.onerror = function (e) {
-                console.log('error', e);
-            };
-
-            switch (method) {
-                case 'put':
-                    site.put(object);
-                    resolve(object);
-                    break;
-                case 'get':
-                    const all = site.getAll();
-                    all.onsucess = function () {
-                        resolve(all.result);
-                    };
-                    break;
-                case 'delete':
-                    site.delete(object._id);
-                    break;
-                default:
-                    console.log('No valid method');
-                    break;
-            }
-
-            tx.oncomplete = function() {
-                db.close();
+export const LOGIN_USER = gql`
+    mutation login($email: String!, $password: String!) {
+        login{email: $email}, password: $password){
+            token
+            user {
+                _id
             }
         }
-    })
-}
+    }`
+    ;
+
+    export const CREATE_USER = gql`
+    mutation signUp(
+        $firstName: String!
+        $lastName: String!
+        $email: String!
+        $password: String!
+      ) {
+        signUp(
+          firstName: $firstName
+          lastName: $lastName
+          email: $email
+          password: $password
+        ) {
+          token
+          user {
+            _id
+          }
+        }
+      }
+    `;
+
+export const CREATE_FUNDRAISER = gql`
+    mutation createFundraiser(
+        $fundraiserName: String!
+        $goal: Number!
+    ) {
+        createFundraiser(
+            fundraiserName: $fundraiserName
+            goal: $goal
+        ) {
+            user{
+                _id
+            }
+        }
+    }`
+    
+export const DELETE_FUNDRAISER = gql`
+ mutation deleteFundraiser($fundraiserName: [ID]!) {
+     deleteFundraiser(fundraiserName: $fundraiserName) {
+             _id
+             userName
+             email
+             fundraiser {
+                 fundraiserName
+                 goal
+                 fundraiserDate
+                 description
+        }
+     }
+ }`
+
+ export const UPDATE_FUNDRAISER = gql`
+    mutation updateFundraiser($fundraiserName: [ID]!) {
+        updateFundraiser(fundraiserName: $fundraiserName) {
+            _id
+            userName
+            email
+            fundraiser {
+                fundraiserName
+                goal
+                fundraiserDate
+                description
+       }
+    }
+}`

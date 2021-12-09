@@ -15,6 +15,9 @@ const fundraiserSchema = new Schema({
     fundraiserDate: {
         type: Date,
         default: Date.now
+    },
+    description: {
+        type: String,
     }
 });
 
