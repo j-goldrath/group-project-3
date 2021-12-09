@@ -1,27 +1,81 @@
-<div class="card-content grey lighten-4">
-    <div class="card">
-        <form class="login-form">
-            <div id="sign-in" class="card-content">
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input id="email-login" type="email" class="validate" />
-                        <label for="email-login">Email</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input id="password-login" type="password" class="validate" />
-                        <label for="password-login">Password</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col s10 offset-s1">
-                        <button style="width: 100%;"
-                            class="btn btn-large waves-effect waves-light" type="submit"
-                            name="action">LOGIN</button>
-                    </div>
-                </div>
-            </div>
-        </form>
-    </div>
-</div>
+import { useState } from 'react';
+import Auth from '../../utils/auth';
+import { Form, Button } from 'react-materialize';
+import { useMutation } from '@apollo/client';
+import { LOGIN_USER } from '../../utils/mutations';
+
+const LoginForm = () => {
+    const [userFormData, setUserFormData] = useState({ email: '', password: '' });
+    const [validated] = useState(false);
+
+    const [loginUser] = useMutation(LOGIN_USER);
+    
+    const handleInputChange = (event) => {
+        const { name, value } = event.target;
+        setUserFormData({ ...userFormData, [name]: value });
+    };
+
+    const handleFormSubmit = async (event) => {
+        event.preventDefault();
+
+        try {
+            const { data } = await loginUser({
+                variables: { ...userFormData }
+            });
+            Auth.login(data.login.token);
+        } catch (err) {
+            console.log(err);
+        }
+
+        setUserFormData({
+            username: '',
+            email: '',
+            password: '',
+        });
+    }
+
+    return (
+        <>
+            <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
+                <Form.Group>
+                    <Form.Label htmlFor="email">Email</Form.Label>
+                    <Form.Control
+                        type="text"
+                        placeholder="Your email"
+                        name="email"
+                        onChange={handleInputChange}
+                        value={userFormData.email}
+                        required
+                    />
+                <Form.Control.Feedback type="invalid">
+                    Email is required!
+                </Form.Control.Feedback>
+                </Form.Group>
+
+                <Form.Group>
+                    <Form.Label htmlFor="password">Password</Form.Label>
+                    <Form.Control
+                        type="password"
+                        placeholder="Your password"
+                        name="password"
+                        onChange={handleInputChange}
+                        value={userFormData.password}
+                        required
+                    />
+                <Form.Control.Feedback type="invalid">
+                    Password is required!
+                </Form.Control.Feedback>
+                </Form.Group>
+                
+                <Button
+                disabled={!(userFormData.email && userFormData.password)}
+                type="submit"
+                >
+                    Login
+                </Button>
+            </Form>
+        </>
+    );
+};
+
+export default LoginForm;
