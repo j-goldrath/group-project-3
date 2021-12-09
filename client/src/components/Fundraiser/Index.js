@@ -11,12 +11,13 @@
                 </div>
 
                 <div class="card-content">
-                    <span id="fundraiser-card-tile" class="card-title fundraiser-card-title">Clean Up The
-                        Park</span>
+                    <span id="fundraiser-card-tile" class="card-title fundraiser-card-title">
+                        Clean Up The Park
+                    </span>
                     <span class="card-title fundraiser-card-subtitle">Chicago, IL</span>                               
-                    <p id="fundraiser-card-description">We are raising funds to help cleanup and revitalize
-                                    the neighborhood park. If we all chip in a little bit we can make this neighborhood
-                                    a better place to live.</p>
+                    <p id="fundraiser-card-description">
+                        We are raising funds to help cleanup and revitalize the neighborhood park. If we all chip in a little bit we can make this neighborhood a better place to live.
+                    </p>
                 </div>
                 <div class="card-progress-bar">
                     <div id="modded">
