@@ -14,18 +14,18 @@ const AppNavbar = () => {
             <Navbar bg='dark' variant='dark' expand='lg'>
             <Container fluid>
             <Navbar.Brand as={Link} to='/'>
-                Google Books Search
+                Helpr
             </Navbar.Brand>
             <Navbar.Toggle aria-controls='navbar' />
             <Navbar.Collapse id='navbar'>
                 <Nav className='ml-auto'>
-                <Nav.Link as={Link} to='/'>
-                    Search For Books
-                </Nav.Link>
                 {Auth.loggedIn() ? (
                     <>
                     <Nav.Link as={Link} to='/donationHistory'>
-                        See Your Books
+                        See Your Donations
+                    </Nav.Link>
+                    <Nav.Link as={Link} to='/createFundraiser'>
+                        Create Fundraiser
                     </Nav.Link>
                     <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
                     </>

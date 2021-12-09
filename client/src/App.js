@@ -7,6 +7,7 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import { StoreProvider } from './utils/GlobalState';
+import 'materialize-css';
 
 import Home from './pages/Home';
 import FundraiserDetails from './pages/FundraiserDetails';
