@@ -109,3 +109,24 @@
     margin-bottom: -15px;
     padding-top: 15px;
 }
+
+/* .donation-column{
+    background-color: #2196F3;
+} */
+
+.collection{
+    width: 100% !important;
+    margin-top: -1px;
+}
+
+/* .campaign-info-progress-bar-wrapper{
+    width: 90%;
+} */
+
+.col-test{
+    width: 100% !important;
+}
+
+.info-stats-wrapper{
+    text-align: center !important;
+}
