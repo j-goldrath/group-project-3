@@ -41,8 +41,11 @@ const resolvers = {
         addFundraiser: async (parent, { fundraiserName, goal, fundraiserDate }) => {
 
         },
-        addUser: async (parent, { firstName, lastName, email, password}) => {
+        addUser: async (parent, args ) => {
+            const user = await User.create(args);
+            const token = signToken(user);
 
+            return { token, user };
         },
         updateDonation: async (parent, { amount, message }) => {
 
