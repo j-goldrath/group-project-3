@@ -8,10 +8,11 @@ import {
 import { setContext } from '@apollo/client/link/context';
 import 'materialize-css';
 
+import DonationForm from './components/DonationForm'
 import Home from './pages/Home';
 import FundraiserDetails from './pages/FundraiserDetails';
 import NoMatch from './pages/NoMatch';
-import Nav from './components/Nav';
+// import Nav from './components/Nav';
 import DonationHistory from './pages/DonationHistory';
 import Success from './pages/Success';
 import CreateFundraiser from './pages/CreateFundraiser';
@@ -42,7 +43,8 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <div>
-            <Nav />
+            {/* <Nav /> */}
+            <DonationForm/>
             <Routes>
               <Route exact path="/" component={Home} />
               <Route exact path="/donationHistory" component={DonationHistory} />

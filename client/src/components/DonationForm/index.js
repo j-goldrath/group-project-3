@@ -1,24 +1,24 @@
 import React, { useState } from 'react';
 import { Form, Button } from 'react-materialize';
 import { useMutation } from '@apollo/client';
-import { UPDATE_FUNDRAISER } from '../utils/mutations';
+// import { UPDATE_FUNDRAISER } from '../../utils/mutations';
 
 const DonationForm = () => {
     const [donationFormData, setDonationFormData] = useState({ value: '' });
 
-    const submit = useMutation(UPDATE_FUNDRAISER);
+    // const submit = useMutation(UPDATE_FUNDRAISER);
 
     const handleInputChange = (event) => {
         const { input, value } = event.target;
         setDonationFormData({ ...donationFormData, [input]: value })
     };
 
-    const handlfeFormSubmit = async (event) => {
+    const handleFormSubmit = async (event) => {
         event.preventDefault();
 
 
     }
-}
+
 
 return (
     <>
@@ -43,7 +43,7 @@ return (
                                 <p>How much would you like to donate?</p>
                             </div>
                             <div class="input-field col s8 m6 offset-s2 offset-m3">
-                                <input id="donation-amount" type="text" class="validate">
+                                <input id="donation-amount" type="text" class="validate"/>
                                     <label for="donation-amount">$ Amount</label>
                             </div>
 
@@ -64,7 +64,7 @@ return (
             </div>
         </div>
 
-    </div>
-
-    </main >
+    </>
 )
+}
+export default DonationForm
