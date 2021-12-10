@@ -10,6 +10,10 @@ import { setContext } from '@apollo/client/link/context';
 import 'materialize-css';
 
 
+import DonationForm from './components/DonationForm'
+=======
+
+
 import Home from './pages/Home';
 import FundraiserDetails from './pages/FundraiserDetails';
 import NoMatch from './pages/NoMatch';
@@ -47,6 +51,8 @@ function App() {
       <Router>
         <div>
             {/* <Nav /> */}
+
+            <DonationForm/>
             <FundraiserCard />
             <Routes>
               <Route exact path="/" component={Home} />
