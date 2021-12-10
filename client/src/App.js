@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import {
   ApolloClient,
   InMemoryCache,
@@ -6,7 +6,7 @@ import {
   createHttpLink,
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
-import { StoreProvider } from './utils/GlobalState';
+import 'materialize-css';
 
 import Home from './pages/Home';
 import FundraiserDetails from './pages/FundraiserDetails';
@@ -42,9 +42,8 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <div>
-          <StoreProvider>
             <Nav />
-            <Switch>
+            <Routes>
               <Route exact path="/" component={Home} />
               <Route exact path="/donationHistory" component={DonationHistory} />
               <Route exact path="/fundraiser/:id" component={FundraiserDetails} />
@@ -52,8 +51,7 @@ function App() {
               <Route exact path="/success" component={Success} />
               <Route exact path="/fundraiser/:id/donate" component={Donate} />
               <Route component={NoMatch} />
-            </Switch>
-          </StoreProvider>
+            </Routes>
           <Footer />
         </div>
       </Router>
