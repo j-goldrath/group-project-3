@@ -1,42 +1,49 @@
 const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
-type Fundraiser {
-    _id: ID
-    fundraiserName: String
-    goal: Number
-    fundraiserDate: Date
-    description: String
-}
+    type Donation {
+        _id: ID
+        donationDate: Date
+        amount: Number
+        fundraiser: [fundraiser]
+        message: String
+    }
 
-type Donation {
-    _id: ID
-    donationDate: Date
-    amount: Number
-    message: String
-    fundraiser: [Fundraiser]
-}
+    type fundraiser {
+        _id: ID
+        fundraiserName: String
+        goal: Number
+        fundraiserDate: Date
+    }
 
-type User {
-    _id: ID
-    firstName: String
-    lastName: String
-    email: string
-    password: string
-    fundraisers: [Fundraiser]
-    donations: [Donations]
-}
+    type User {
+        _id: ID
+        firstName: String
+        lastName: String
+        email: String
+        password: String
+        fundraiser: [fundraiser]
+        donation: [Donation]
+    }
+    
+    type Query {
+        donation(_id: ID!): Donation 
+        donations(fundraiser: ID): [Donation]
+        fundraiser(_id: ID!): fundraiser
+        fundraisers(_id: ID, fundraiserName: String) [fundraiser]
+        user: User
+    }
 
-type Auth {
-    token: ID
-    user: User
-}
+    type Mutation {
+        addDonation(amount: Number!, message: String): User
+        addFundraiser(fundraiserName: String!, goal: Number!, fundraiserDate: Date): User
+        addUser(firstName: String, lastName: String, email: String, password: String): User
+        updateDonation(amount: Number, message: String):
+        updateFundraiser(fundraiserName: String!, goal: Number!);
+        updateUser(firstName: String, lastName: String, email: String, password: String);
+        login(email: String!, password: String!):
+    }
+`;
 
-type Query {
-    fundraisers: [Fundraiser]
-    donations(fundraiser: ID, name: String): [Donation]
-    donation(_id: ID!): Donation
-    user: User
-    donation(_id: ID!): Donation
-}`
+module.exports = typeDefs;
 

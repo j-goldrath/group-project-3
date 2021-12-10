@@ -114,10 +114,10 @@
     background-color: #2196F3;
 } */
 
-.collection{
+/* .collection{
     width: 100% !important;
     margin-top: -1px;
-}
+} */
 
 /* .campaign-info-progress-bar-wrapper{
     width: 90%;
@@ -129,4 +129,43 @@
 
 .info-stats-wrapper{
     text-align: center !important;
+}
+
+.left-column{
+    padding-right: 0px !important;
+}
+
+.right-column{
+    padding-left: 0px !important;
+}
+
+.fundraiser-info-stats{
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+}
+
+/* .progress-bar-col{
+    padding-right: -10.5px !important;
+} */
+
+.dollars-bold{
+    font-weight: bold;
+}
+
+.info-progress-bar{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.donors-list-wrapper{
+    margin-top: -10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.blue-col{
+    border-top-right-radius: 3px !important;
+    border-bottom-right-radius: 3px !important;
 }

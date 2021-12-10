@@ -1,37 +1,79 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Fundraiser, Donation } = require('../models');
-const { sighnToken } = require('../utils/auth');
-const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
+const { Donation, Fundraiser, User, Donation } = require('../models');
+const { signToken } = require('../utils/auth');
+const User = require('../models/user');
+const stripe = require('stripe')
 
 const resolvers = {
     Query: {
-        fundraiers: async () => {
-            return await Fundraiser.find();
+        Donation: async (parent, { _id }) => {
+            return await Donation.findById(_id).populate('fundraiser');
         },
-            user: async (parent, { fundraiser, name }) => {
-                const params = {};
+        Donations: async (parent, { fundraiser, _id }) => {
+            const params = {};
 
-                if (fundraiser) {
-                    params.fundraiser = fundraiser;
-                }
-
-                if (name) {
-                    params.name = {
-                        $regex: name
-                    };
-                }
-                return await User.find(params).populate('fundraiser');
-            },
-            user: async (parent, { _id }) => {
-                return await User.findbyId(_id).populate('fundraiser');
-            },
-            user: async (parent, args, context) => {
-                if (context.user) {
-                    const user = await User.findbyId(context.user._id).populate({
-                        path: 'user.fundraisers',
-                        populate: ''
-                    })
-                }
+            if(fundraiser) {
+                params.fundraiser = fundraiser;
             }
+
+            if(_id) {
+                params.id = {
+                    $regex: id
+                };
+            }
+            return await (await Donation.find(params)).populate('fundraiser');
+        },
+        Fundraiser: async (parent, { _id }) => {
+            return await Fundraiser.findById(_id);
+        },
+        Fundraisers: async (parent, { _id }) => {
+            return await Fundraiser.findById(_id);
+        },
+        User: async () => {
+            return await User.find({});
+        }
+    },
+    Mutation: {
+        addDonation: async (parent, { args }) => {
+            const Donation = await Donation.create(args);
+            return { Donation };
+        },
+        addFundraiser: async (parent, { fundraiserName, goal, fundraiserDate }) => {
+
+        },
+        addUser: async (parent, args ) => {
+            const user = await User.create(args);
+            const token = signToken(user);
+
+            return { token, user };
+        },
+        updateDonation: async (parent, { amount, message }) => {
+
+        },
+        updateFundraiser: async (parent, { fundraiserName, goal }) => {
+
+        },
+        updateUser: async (parent, { firstName, lastName, email, password }) => {
+
+        },
+        login: async (parent, { email, password }) => {
+            const user = await User.findOne({ email });
+
+        if (!user) {
+        throw new AuthenticationError('Incorrect credentials');
     }
-}
+
+        const correctPw = await user.isCorrectPassword(password);
+
+        if (!correctPw) {
+        throw new AuthenticationError('Incorrect credentials');
+    }
+
+        const token = signToken(user);
+
+        return { token, user };
+        },
+    }
+};
+module.exports = resolvers;
+
