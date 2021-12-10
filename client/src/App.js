@@ -20,7 +20,7 @@ import CreateFundraiser from './pages/CreateFundraiser';
 import Donate from './pages/Donate';
 import Footer from './components/Footer';
 import FundraiserCard from './components/FundraiserCard/FundraiserCard';
-
+import FundraiserInfoCard from './components/FundraiserInfoCard/FundraiserInfoCard';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -48,6 +48,7 @@ function App() {
         <div>
             {/* <Nav /> */}
             <FundraiserCard />
+            <FundraiserInfoCard />
             <Routes>
               <Route exact path="/" component={Home} />
               <Route exact path="/donationHistory" component={DonationHistory} />
