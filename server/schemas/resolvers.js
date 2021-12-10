@@ -2,7 +2,8 @@ const { AuthenticationError } = require('apollo-server-express');
 const { Donation, Fundraiser, User, Donation } = require('../models');
 const { signToken } = require('../utils/auth');
 const User = require('../models/user');
-const stripe = require('stripe')
+const stripe = require('stripe');
+const { populate } = require('../models/fundraiser');
 
 const resolvers = {
     Query: {
@@ -29,7 +30,13 @@ const resolvers = {
         Fundraisers: async (parent, { _id }) => {
             return await Fundraiser.findById(_id);
         },
-        User: async () => {
+        User: async (parent, args, context) => {
+            if (context.user) {
+                const user = await User.findById(context.user_id)
+                .populate({
+                    path: 'donations'
+                });
+            }
             return await User.find({});
         }
     },
@@ -38,8 +45,12 @@ const resolvers = {
             const Donation = await Donation.create(args);
             return { Donation };
         },
-        addFundraiser: async (parent, { fundraiserName, goal, fundraiserDate }) => {
+        addFundraiser: async (parent, args, context) => {
+            if(context.user) {
+                const fundraiser = new fundraiser();
 
+                await User.findByIdAndUpdate()
+            }
         },
         addUser: async (parent, args ) => {
             const user = await User.create(args);
@@ -47,14 +58,18 @@ const resolvers = {
 
             return { token, user };
         },
-        updateDonation: async (parent, { amount, message }) => {
+        updateDonation: async (parent, args) => {
+
 
         },
         updateFundraiser: async (parent, { fundraiserName, goal }) => {
 
         },
-        updateUser: async (parent, { firstName, lastName, email, password }) => {
-
+        updateUser: async (parent, { args, context }) => {
+            if (context.user) {
+            return await User.findByIdAndUpdate(context.user._id, args, { new: true });
+        }
+            throw new AuthenticationError('Unable to log in');
         },
         login: async (parent, { email, password }) => {
             const user = await User.findOne({ email });
