@@ -9,22 +9,15 @@ import { setContext } from '@apollo/client/link/context';
 //materialize
 import 'materialize-css';
 
-
-import DonationForm from './components/DonationForm'
-=======
-
-
 import Home from './pages/Home';
-import FundraiserDetails from './pages/FundraiserDetails';
-import NoMatch from './pages/NoMatch';
-// import Nav from './components/Nav';
-import DonationHistory from './pages/DonationHistory';
-import Success from './pages/Success';
-import CreateFundraiser from './pages/CreateFundraiser';
-import Donate from './pages/Donate';
+import Nav from './components/Nav';
 import Footer from './components/Footer';
-import FundraiserCard from './components/FundraiserCard/FundraiserCard';
-import FundraiserInfoCard from './components/FundraiserInfoCard/FundraiserInfoCard';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
+import CreateFundraiser from './pages/CreateFundraiser';
+import FundraiserCard from './components/FundraiserCard/FundraiserCard'
+import DonationForm from './components/DonationForm';
+import NoMatch from './pages/NoMatch';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -50,20 +43,17 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <div>
-            {/* <Nav /> */}
-
-            <DonationForm/>
+            <Nav />
+            <Login />
+            <Signup />
             <FundraiserCard />
-            <FundraiserInfoCard />
+            <DonationForm />
+            <CreateFundraiser />
             <Routes>
               <Route exact path="/" component={Home} />
-              <Route exact path="/donationHistory" component={DonationHistory} />
-              <Route exact path="/fundraiser/:id" component={FundraiserDetails} />
-              <Route exact path="/createFundraiser" component={CreateFundraiser} />
-              <Route exact path="/success" component={Success} />
-              <Route exact path="/fundraiser/:id/donate" component={Donate} />
+              <Route exact path="/login" component={Login}/>
+              <Route exact path="signup" component={Signup}/>
               <Route component={NoMatch} />
-              <Route exact path="/fundraiserCard" component={FundraiserCard} />
             </Routes>
           <Footer />
         </div>
