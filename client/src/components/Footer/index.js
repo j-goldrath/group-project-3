@@ -2,7 +2,7 @@ const Footer = () => {
     return(
         <footer>
             <div>
-                <h4>All donations are final.</h4>
+                <h6>All donations are final.</h6>
             </div>
         </footer>
     );
