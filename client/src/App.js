@@ -9,7 +9,6 @@ import { setContext } from '@apollo/client/link/context';
 //materialize
 import 'materialize-css';
 
-
 import Home from './pages/Home';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
