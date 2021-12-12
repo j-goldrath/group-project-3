@@ -2,7 +2,7 @@ import React from 'react';
 
 import './FundraiserCard.css';
 import charity from './charity-cleanup.jpg';
-import { CardTitle, Button, Card, Row, Col } from 'react-materialize';
+import { CardTitle, Card, Row, Col } from 'react-materialize';
 
 function FundraiserCard(props) {
     return (
@@ -16,9 +16,7 @@ function FundraiserCard(props) {
                                 Park</span>
                             <span className="card-title fundraiser-card-subtitle">Chicago, IL</span>
                             {/* <!-- this is the fundraiser description section --> */}
-                            <p className="fundraiser-card-description" id="fundraiser-card-description">We are raising funds to help cleanup and revitalize
-                                the neighborhood park. If we all chip in a little bit we can make this neighborhood
-                                a better place to live.</p>
+                            <p className="fundraiser-card-description" id="fundraiser-card-description">We are raising funds to help cleanup and revitalize the neighborhood park. If we all chip in a little bit we can make this neighborhood a better place to live.</p>
 
                             {/* <!-- this is the fundraiser progress bar section --> */}
                             <div className="card-progress-bar">

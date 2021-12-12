@@ -1,73 +1,90 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Navbar, Nav, Container, Modal, Tab } from 'react-materialize'
-import SignUpForm from '../SignupForm';
-import LoginForm from '../LoginForm';
-
+import { Icon, Navbar, Dropdown, Button } from 'react-materialize';
 import Auth from '../../utils/auth';
 
-const AppNavbar = () => {
-    const [showModal, setShowModal] = useState(false);
-
+const Nav = () => {
     return (
         <>
-            <Navbar bg='dark' variant='dark' expand='lg'>
-            <Container fluid>
-            <Navbar.Brand as={Link} to='/'>
-                Helpr
-            </Navbar.Brand>
-            <Navbar.Toggle aria-controls='navbar' />
-            <Navbar.Collapse id='navbar'>
-                <Nav className='ml-auto'>
-                {Auth.loggedIn() ? (
-                    <>
-                    <Nav.Link as={Link} to='/donationHistory'>
-                        See Your Donations
-                    </Nav.Link>
-                    <Nav.Link as={Link} to='/createFundraiser'>
-                        Create Fundraiser
-                    </Nav.Link>
-                    <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
-                    </>
-                ) : (
-                    <Nav.Link onClick={() => setShowModal(true)}>Login/Sign Up</Nav.Link>
-                )}
-                </Nav>
-            </Navbar.Collapse>
-            </Container>
+          <Navbar
+            alignLinks="right"
+            brand={<a className="brand-logo" href="/">Helpr</a>}
+            id="mobile-nav"
+            menuIcon={<Icon>menu</Icon>}
+            options={{
+                draggable: true,
+                edge: 'left',
+                inDuration: 250,
+                onCloseEnd: null,
+                onCloseStart: null,
+                onOpenEnd: null,
+                onOpenStart: null,
+                outDuration: 200,
+                preventScrolling: true
+            }}
+            >
+            {Auth.loggedIn() ? (
+                <>
+                {/* Prints this if user is logged in */}
+                <Dropdown
+                    id="Dropdown_8"
+                    options={{
+                        alignment: 'left',
+                        autoTrigger: true,
+                        closeOnClick: true,
+                        constrainWidth: true,
+                        container: null,
+                        coverTrigger: true,
+                        hover: false,
+                        inDuration: 150,
+                        onCloseEnd: null,
+                        onCloseStart: null,
+                        onOpenEnd: null,
+                        onOpenStart: null,
+                        outDuration: 250
+                    }}
+                    trigger={<Button node="button"><Icon right>arrow_drop_down</Icon></Button>}
+                >
+                    <a href="/createFundraiser">
+                        Make Fundraiser
+                    </a>
+                    <a onClick={Auth.logout} href="/">
+                        Logout
+                    </a>
+                </Dropdown>
+                </>
+            ) : (
+                <>
+                {/*Prints this if user is logged out */}
+                <Dropdown
+                    id="Dropdown_8"
+                    options={{
+                        alignment: 'left',
+                        autoTrigger: true,
+                        closeOnClick: true,
+                        constrainWidth: true,
+                        container: null,
+                        coverTrigger: true,
+                        hover: false,
+                        inDuration: 150,
+                        onCloseEnd: null,
+                        onCloseStart: null,
+                        onOpenEnd: null,
+                        onOpenStart: null,
+                        outDuration: 250
+                    }}
+                    trigger={<Button node="button">Login/Sign Up</Button>}
+                >
+                    <a href="/login">
+                        Login
+                    </a>
+                    <a href="/signup">
+                        Sign Up
+                    </a>
+                </Dropdown>
+                </>
+            )}
             </Navbar>
-            <Modal
-                size='lg'
-                show={showModal}
-                onHide={() => setShowModal(false)}
-                aria-labelledby='signup-modal'>
-                <Tab.Container defaultActiveKey='login'>
-                <Modal.Header closeButton>
-                    <Modal.Title id='signup-modal'>
-                    <Nav variant='pills'>
-                        <Nav.Item>
-                        <Nav.Link eventKey='login'>Login</Nav.Link>
-                        </Nav.Item>
-                        <Nav.Item>
-                        <Nav.Link eventKey='signup'>Sign Up</Nav.Link>
-                        </Nav.Item>
-                    </Nav>
-                    </Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                    <Tab.Content>
-                    <Tab.Pane eventKey='login'>
-                        <LoginForm handleModalClose={() => setShowModal(false)} />
-                    </Tab.Pane>
-                    <Tab.Pane eventKey='signup'>
-                        <SignUpForm handleModalClose={() => setShowModal(false)} />
-                    </Tab.Pane>
-                    </Tab.Content>
-                </Modal.Body>
-                </Tab.Container>
-            </Modal>
         </>
-    );
+      );
 };
 
-export default AppNavbar
+export default Nav;
