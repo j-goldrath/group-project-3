@@ -48,7 +48,7 @@ const DonationForm = () => {
                             >
                                 <Button
                                     id="cancel-make-donation-button"
-                                    class="btn waves-effect waves-light fwb red" 
+                                    className="btn waves-effect waves-light fwb red" 
                                     type="button"
                                     name="action">
                                     Cancel
@@ -59,7 +59,7 @@ const DonationForm = () => {
                             >
                                 <Button
                                     id="make-donation-button"
-                                    class="btn waves-effect waves-light fwb red" 
+                                    className="btn waves-effect waves-light fwb red" 
                                     type="button"
                                     name="action">
                                     Submit
