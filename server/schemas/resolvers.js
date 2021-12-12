@@ -2,7 +2,6 @@ const { AuthenticationError } = require('apollo-server-express');
 const { Donation, Fundraiser, User, Donation } = require('../models');
 const { signToken } = require('../utils/auth');
 const User = require('../models/user');
-const stripe = require('stripe');
 const { populate } = require('../models/fundraiser');
 
 const resolvers = {
@@ -31,8 +30,8 @@ const resolvers = {
             return await Fundraiser.findById(_id);
         },
         User: async (parent, args, context) => {
-            if (context.user) {
-                const user = await User.findById(context.user_id)
+            if (context.User) {
+                const User = await User.findById(context.user_id)
                 .populate({
                     path: 'donations'
                 });
@@ -41,35 +40,37 @@ const resolvers = {
         }
     },
     Mutation: {
-        addDonation: async (parent, { args }) => {
-            const Donation = await Donation.create(args);
-            return { Donation };
+        addDonation: async (parent, { amount, message }) => {
+            return await Donation.create({ amount, message });
         },
-        addFundraiser: async (parent, args, context) => {
-            if(context.user) {
-                const fundraiser = new fundraiser();
-
-                await User.findByIdAndUpdate()
-            }
+        addFundraiser: async (parent, { fundraiserName, goal, fundraiserDate }) => {
+            return await Fundraiser.create({ fundraiserName, goal, fundraiserDate});
         },
-        addUser: async (parent, args ) => {
-            const user = await User.create(args);
-            const token = signToken(user);
-
-            return { token, user };
+        addUser: async (parent, { firstName, lastName, email, password }) => {
+            return await User.create({firstName, lastName, email, password});
         },
-        updateDonation: async (parent, args) => {
-
-
+        updateDonation: async (parent, { amount, message }) => {
+            return await Donation.findOneAndUpdate(
+                { number: amount },
+                { string: message },
+                { new: true }
+            );
         },
         updateFundraiser: async (parent, { fundraiserName, goal }) => {
-
+            return await Fundraiser.findOneAndUpdate(
+                { string: fundraiserName },
+                { string: goal },
+                { new: true }
+            );
         },
-        updateUser: async (parent, { args, context }) => {
-            if (context.user) {
-            return await User.findByIdAndUpdate(context.user._id, args, { new: true });
-        }
-            throw new AuthenticationError('Unable to log in');
+        updateUser: async (parent, { firstName, lastName, email, password }) => {
+            return await User.findOneAndUpdate(
+                { string: firstName },
+                { string: lastName },
+                { string: email },
+                { string: password },
+                { new: true }
+            );
         },
         login: async (parent, { email, password }) => {
             const user = await User.findOne({ email });
@@ -87,7 +88,8 @@ const resolvers = {
         const token = signToken(user);
 
         return { token, user };
-        },
-    }
+        }
+    },
 };
 module.exports = resolvers;
+

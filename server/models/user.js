@@ -21,15 +21,16 @@ const userSchema = new Schema({
     email: {
         type: String,
         required: true,
-        unique: true
+        unique: true,
+        match: [/.+@.+\..+/, 'Must match an email address!'],
     },
     password: {
         type: String,
         required: true,
         minlength: 5
     },
-    fundraiser: [Fundraiser.schema],
-    donation: [Donation.schema]
+    fundraisers: [Fundraiser.schema],
+    donations: [Donation.schema]
 });
 
 userSchema.pre('save', async function (next) {

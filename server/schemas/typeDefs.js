@@ -35,14 +35,15 @@ const typeDefs = gql`
     }
 
     type Mutation {
-        addDonation(amount: Number!, message: String): User
-        addFundraiser(fundraiserName: String!, goal: Number!, fundraiserDate: Date): User
-        addUser(firstName: String, lastName: String, email: String, password: String): User
-        updateDonation(amount: Number, message: String):
+        addDonation(amount: Number!, message: String!): Donation
+        addFundraiser(fundraiserName: String!, goal: Number!, fundraiserDate: Date!): Fundraiser
+        addUser(firstName: String!, lastName: String!, email: String!, password: String!): User
+        updateDonation(amount: Number!, message: String!):
         updateFundraiser(fundraiserName: String!, goal: Number!);
-        updateUser(firstName: String, lastName: String, email: String, password: String);
+        updateUser(firstName: String!, lastName: String!, email: String!, password: String!);
         login(email: String!, password: String!):
     }
 `;
 
 module.exports = typeDefs;
+

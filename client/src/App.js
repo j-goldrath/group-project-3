@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import {
   ApolloClient,
   InMemoryCache,
@@ -6,19 +6,24 @@ import {
   createHttpLink,
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
+//materialize
+import 'materialize-css';
+
+
+import DonationForm from './components/DonationForm';
+
 
 import Home from './pages/Home';
 import FundraiserDetails from './pages/FundraiserDetails';
 import NoMatch from './pages/NoMatch';
-import Login from './pages/Login';
-import Signup from './pages/Signup';
-import Nav from './components/Nav';
-import { StoreProvider } from './utils/GlobalState';
+// import Nav from './components/Nav';
 import DonationHistory from './pages/DonationHistory';
 import Success from './pages/Success';
 import CreateFundraiser from './pages/CreateFundraiser';
 import Donate from './pages/Donate';
 import Footer from './components/Footer';
+import FundraiserCard from './components/FundraiserCard/FundraiserCard';
+
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -44,20 +49,20 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <div>
-          <StoreProvider>
-            <Nav />
-            <Switch>
+            {/* <Nav /> */}
+
+            <DonationForm/>
+            <FundraiserCard />
+            <Routes>
               <Route exact path="/" component={Home} />
-              <Route exact path="/login" component={Login} />
-              <Route exact path="/signup" component={Signup} />
               <Route exact path="/donationHistory" component={DonationHistory} />
               <Route exact path="/fundraiser/:id" component={FundraiserDetails} />
               <Route exact path="/createFundraiser" component={CreateFundraiser} />
               <Route exact path="/success" component={Success} />
-              <Route exact path="/fundraiser/:id/Donate" component={Donate} />
+              <Route exact path="/fundraiser/:id/donate" component={Donate} />
               <Route component={NoMatch} />
-            </Switch>
-          </StoreProvider>
+              <Route exact path="/fundraiserCard" component={FundraiserCard} />
+            </Routes>
           <Footer />
         </div>
       </Router>
