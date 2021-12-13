@@ -19,6 +19,7 @@ import Donate from './pages/Donate';
 import Login from './pages/Login';
 const httpLink = createHttpLink({
   uri: '/graphql',
+  credentials: 'same-origin'
 });
 
 const authLink = setContext((_, { headers }) => {

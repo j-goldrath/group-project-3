@@ -12,7 +12,7 @@ function FundraiserCard(props) {
                 <Col offset="m3" s={12} m={6}>
                     <Card header={<CardTitle image={charity}></CardTitle>}>
                         <a href="/fundraiserInfoCard" className="card-link">
-                            <span id="fundraiser-card-tile" class="card-title fundraiser-card-title">Clean Up The
+                            <span id="fundraiser-card-tile" className="card-title fundraiser-card-title">Clean Up The
                                 Park</span>
                             <span className="card-title fundraiser-card-subtitle">Chicago, IL</span>
                             {/* <!-- this is the fundraiser description section --> */}

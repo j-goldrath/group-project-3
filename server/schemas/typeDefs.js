@@ -3,17 +3,17 @@ const { gql } = require('apollo-server-express');
 const typeDefs = gql`
     type Donation {
         _id: ID
-        donationDate: Date
-        amount: Number
-        fundraiser: [fundraiser]
+        donationDate: String
+        amount: Int
+        fundraiser: [Fundraiser]
         message: String
     }
 
-    type fundraiser {
+    type Fundraiser {
         _id: ID
         fundraiserName: String
-        goal: Number
-        fundraiserDate: Date
+        goal: Int
+        fundraiserDate: String
     }
 
     type User {
@@ -22,26 +22,31 @@ const typeDefs = gql`
         lastName: String
         email: String
         password: String
-        fundraiser: [fundraiser]
+        fundraiser: [Fundraiser]
         donation: [Donation]
+    }
+
+    type Auth {
+        token: String!
+        user: User!
     }
     
     type Query {
-        donation(_id: ID!): Donation 
-        donations(fundraiser: ID): [Donation]
-        fundraiser(_id: ID!): fundraiser
-        fundraisers(_id: ID, fundraiserName: String) [fundraiser]
-        user: User
+        Donation(_id: ID!): Donation 
+        Donations(fundraiser: ID): [Donation]
+        Fundraiser(_id: ID!): Fundraiser
+        Fundraisers(_id: ID, fundraiserName: String): [Fundraiser]
+        User: User
     }
 
     type Mutation {
-        addDonation(amount: Number!, message: String!): Donation
-        addFundraiser(fundraiserName: String!, goal: Number!, fundraiserDate: Date!): Fundraiser
-        addUser(firstName: String!, lastName: String!, email: String!, password: String!): User
-        updateDonation(amount: Number!, message: String!):
-        updateFundraiser(fundraiserName: String!, goal: Number!);
-        updateUser(firstName: String!, lastName: String!, email: String!, password: String!);
-        login(email: String!, password: String!):
+        addDonation(amount: Int!, message: String!): Donation
+        addFundraiser(fundraiserName: String!, goal: Int!, fundraiserDate: String!): Fundraiser
+        addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth 
+        updateDonation(amount: Int!, message: String!): Donation
+        updateFundraiser(fundraiserName: String!, goal: Int!): Fundraiser
+        updateUser(firstName: String!, lastName: String!, email: String!, password: String!): User
+        login(email: String!, password: String!): User
     }
 `;
 
