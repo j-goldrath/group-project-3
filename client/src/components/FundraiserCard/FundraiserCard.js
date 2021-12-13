@@ -11,7 +11,7 @@ function FundraiserCard(props) {
             <Row>
                 <Col offset="m3" s={12} m={6}>
                     <Card header={<CardTitle image={charity}></CardTitle>}>
-                        <a href="#" className="card-link">
+                        <a href="/fundraiserInfoCard" className="card-link">
                             <span id="fundraiser-card-tile" class="card-title fundraiser-card-title">Clean Up The
                                 Park</span>
                             <span className="card-title fundraiser-card-subtitle">Chicago, IL</span>
@@ -29,7 +29,7 @@ function FundraiserCard(props) {
                                     </div>
                                 </div>
                             </div>
-                            {/* <!-- this is the funsraiser goal section --> */}
+                            {/* <!-- this is the fundraiser goal section --> */}
                             <div className="card-content fundraiser-card-stats-wrapper">
                                 <Col className="center-align" s={6}>
                                     <p id="fundraiser-card-amount-raised"><span className="fundraiser-card-stats">Raised:
@@ -43,7 +43,7 @@ function FundraiserCard(props) {
                         </a>
 
                         {/* <!-- this is the card donate button section --> */}
-                        <a id="card-make-donation-button" href="#">
+                        <a id="card-make-donation-button" href="/donate">
                                 <div className="card-donate-button-wrapper green white-text">
                                     <h5 className="center-align">MAKE A DONATION</h5>
                                 </div>

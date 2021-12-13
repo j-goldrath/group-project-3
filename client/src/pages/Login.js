@@ -1,69 +1,34 @@
-import { Button, Card, Row, TextInput } from 'react-materialize';
-import { useState } from 'react';
-import { useMutation } from '@apollo/client';
-import { LOGIN_USER } from '../utils/mutations';
-import Auth from '../utils/auth';
-
-function Login(props) {
-    const [formState, setFormState] = useState({ email: '', password: '' });
-    const [login] = useMutation(LOGIN_USER);
-
-    const handleFormSubmit = async (event) => {
-        event.preventDefault();
-        try {
-            const mutationResponse = await login({
-                variables: { email: formState.email, password: formState.password},
-            });
-            const token = mutationResponse.data.login.token;
-            Auth.login(token);
-        } catch (e) {
-            console.log(e);
-        }
-    };
-
-    const handleChange = (event) => {
-        const { name, value } = event.target;
-        setFormState({
-            ...formState,
-            [name]: value,
-        });
-    };
-
+const Login = (props) => {
+    
     return (
         <>
-            <Card>
-                <Row>
-                    <TextInput
-                        email
-                        id="TextInput-35"
-                        label="Email"
-                        name="email"
-                        onChange={handleChange}
-                        validate
-                    />
-                </Row>
-                <Row>
-                    <TextInput
-                        id="TextInput-40"
-                        label="Password"
-                        name="password"
-                        onChange={handleChange}
-                        password
-                    />
-                </Row>
-                <Row>
-                    <Button
-                    node="button"
-                    type="submit"
-                    waves="light"
-                    onClick={handleFormSubmit}
-                    >
-                        Login
-                    </Button>
-                </Row>
-            </Card>
+            <div className="card-content grey lighten-4">
+                <div className="card">
+                    <form className="login-form">
+                    <div id="sign-in" className="card-content">
+                        <div className="row">
+                        <div className="input-field col s12">
+                            <input id="email-login" type="email" className="validate" />
+                            <label htmlFor="email-login">Email</label>
+                        </div>
+                        </div>
+                        <div className="row">
+                        <div className="input-field col s12">
+                            <input id="password-login" type="password" className="validate" />
+                            <label htmlFor="password-login">Password</label>
+                        </div>
+                        </div>
+                        <div className="row">
+                        <div className="col s10 offset-s1">
+                            <button style={{width: '100%'}} className="btn btn-large waves-effect waves-light" type="submit" name="action">LOGIN</button>
+                        </div>
+                        </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
         </>
-    )
-};
+    );
+}
 
 export default Login;

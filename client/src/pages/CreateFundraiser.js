@@ -38,10 +38,8 @@ const CreateFundraiser = () => {
                     />
                     </Row>
                     <Row>
-                    <TextInput
-                        id="TextInput-48"
-                        label="Description"
-                    />
+                    <h6>Description</h6>
+                    <input type="text" class="browser-default" />
                     </Row>
                     <Row>
                         <p>upload image</p>
@@ -70,7 +68,7 @@ const CreateFundraiser = () => {
                     >
                         <Button
                             id="make-donation-button"
-                            class="btn waves-effect waves-light fwb red" 
+                            class="btn waves-effect waves-light fwb green" 
                             type="button"
                             name="action">
                             Submit

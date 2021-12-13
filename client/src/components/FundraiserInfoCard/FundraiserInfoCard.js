@@ -2,7 +2,6 @@ import React from 'react';
 
 import './FundraiserInfoCard.css';
 import charity from './charity-cleanup.jpg';
-import { CardTitle, Button, Card, Row, Col } from 'react-materialize';
 
 function FundraiserInfoCard(props) {
     return (
