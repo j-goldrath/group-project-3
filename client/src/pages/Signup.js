@@ -4,7 +4,7 @@ import { CREATE_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
 
 const Signup = (props) => {
-    const [formState, setFormState] = useState({ email: '', password: '' });
+    const [formState, setFormState] = useState({ firstName: '', lastName: '', email: '', password: '' });
     const [createUser] = useMutation(CREATE_USER);
     
     const handleFormSubmit = async (event) => {
@@ -32,25 +32,25 @@ const Signup = (props) => {
             <div id="register" className="card-content">
             <div className="row">
                 <div className="input-field col s12">
-                <input id="firstname-register" type="text" className="validate" onChange={handleChange} />
+                <input id="firstname-register" type="text" className="validate" name="firstName" onChange={handleChange} />
                 <label htmlFor="firstname-register">First Name</label>
                 </div>
             </div>
             <div className="row">
                 <div className="input-field col s12">
-                <input id="lastname-register" type="text" className="validate" onChange={handleChange} />
+                <input id="lastname-register" type="text" className="validate" name="lastName" onChange={handleChange} />
                 <label htmlFor="lastname-register">Last Name</label>
                 </div>
             </div>
             <div className="row">
                 <div className="input-field col s12">
-                <input id="email-register" type="email" className="validate" onChange={handleChange} />
+                <input id="email-register" type="email" className="validate" name="email" onChange={handleChange} />
                 <label htmlFor="email-register">Email</label>
                 </div>
             </div>
             <div className="row">
                 <div className="input-field col s12">
-                <input id="password-register" type="password" className="validate" onChange={handleChange} />
+                <input id="password-register" type="password" className="validate" name="password" onChange={handleChange} />
                 <label htmlFor="password-register">Password</label>
                 </div>
             </div>
