@@ -12,13 +12,12 @@ import 'materialize-css';
 import Home from './pages/Home';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
-import Login from './pages/Login';
 import Signup from './pages/Signup';
-import CreateFundraiser from './pages/CreateFundraiser';
 import FundraiserCard from './components/FundraiserCard/FundraiserCard'
 import DonationForm from './components/DonationForm';
 import NoMatch from './pages/NoMatch';
-
+import FundraiserInfoCard from './components/FundraiserInfoCard/FundraiserInfoCard';
+import LoginSignup from './components/LoginSignup/LoginSignup'
 const httpLink = createHttpLink({
   uri: '/graphql',
 });
@@ -42,18 +41,13 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
+        <LoginSignup />
         <div>
-            <Nav />
-            <Login />
-            <Signup />
-            <FundraiserCard />
-            <DonationForm />
-            <CreateFundraiser />
             <Routes>
               <Route exact path="/" component={Home} />
-              <Route exact path="/login" component={Login}/>
               <Route exact path="signup" component={Signup}/>
               <Route component={NoMatch} />
+              <Route exact path="fundraiserCard" component={FundraiserCard}/>
             </Routes>
           <Footer />
         </div>

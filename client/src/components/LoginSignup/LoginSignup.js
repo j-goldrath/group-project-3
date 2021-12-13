@@ -1,12 +1,7 @@
 import React from 'react';
 
-import './LoginSignup.css';
-
 function LoginSignup() {
-    
-    let el = document.querySelector('.tabs');
-    let instance = M.Tabs.init(el, {});
-    
+
     return (
         <div className="row">
         <div className="col s12 m10 offset-m1 l8 offset-l2 xl6 offset-xl3">
@@ -88,3 +83,6 @@ function LoginSignup() {
       </div>
     )
 }
+
+
+export default LoginSignup;

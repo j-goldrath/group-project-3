@@ -1,4 +1,5 @@
 import { Button, Row, Col, Card, TextInput, Divider } from 'react-materialize';
+import './index.css';
 // import { useEffect } from 'react';
 // import { useLazyQuery } from '@apollo/client';
 // import { QUERY_CHECKOUT } from '../../utils/queries';
@@ -37,7 +38,7 @@ const DonationForm = () => {
                         <h6>How much would you like to donate?</h6>
                         <Row>
                         <TextInput
-                            id="TextInput-48"
+                            id="TextInput-48 donation-amount"
                             label="$ Amount"
                         />
                         </Row>
@@ -45,6 +46,7 @@ const DonationForm = () => {
                         <Row>
                             <Col
                                 m={6}
+                                s={1}
                             >
                                 <Button
                                     id="cancel-make-donation-button"
@@ -56,10 +58,11 @@ const DonationForm = () => {
                             </Col>
                             <Col
                                 m={6}
+                                s={1}
                             >
                                 <Button
                                     id="make-donation-button"
-                                    className="btn waves-effect waves-light fwb red" 
+                                    className="btn waves-effect waves-light fwb green" 
                                     type="button"
                                     name="action">
                                     Submit
