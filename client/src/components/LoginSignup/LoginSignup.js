@@ -4,10 +4,14 @@ import './LoginSignup.css';
 
 function LoginSignup() {
     
-    let el = document.querySelector('.tabs');
-    let instance = M.Tabs.init(el, {});
+    componentDidMount(); {
+        let tabEl = document.querySelector('.tabs');
+        let instance = M.Tabs.init(tabEl, {});
+    }
     
+
     return (
+
         <div className="row">
         <div className="col s12 m10 offset-m1 l8 offset-l2 xl6 offset-xl3">
           <div className="card">
