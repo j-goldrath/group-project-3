@@ -18,10 +18,10 @@ const typeDefs = gql`
 
     type User {
         _id: ID
-        firstName: String
-        lastName: String
-        email: String
-        password: String
+        email: String!
+        firstName: String!
+        lastName: String!
+        password: String!
         fundraiser: [Fundraiser]
         donation: [Donation]
     }
@@ -42,7 +42,7 @@ const typeDefs = gql`
     type Mutation {
         addDonation(amount: Int!, message: String!): Donation
         addFundraiser(fundraiserName: String!, goal: Int!, fundraiserDate: String!): Fundraiser
-        addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth 
+        addUser(email: String!, password: String!, firstName: String!, lastName: String!): Auth 
         updateDonation(amount: Int!, message: String!): Donation
         updateFundraiser(fundraiserName: String!, goal: Int!): Fundraiser
         updateUser(firstName: String!, lastName: String!, email: String!, password: String!): User

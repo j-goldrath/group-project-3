@@ -1,7 +1,7 @@
 const { AuthenticationError } = require('apollo-server-express');
 const {  Fundraiser, User, Donation } = require('../models');
 const { signToken } = require('../utils/auth');
-const { populate } = require('../models/fundraiser');
+// const { populate } = require('../models/Fundraiser');
 
 const resolvers = {
     Query: {
@@ -46,8 +46,12 @@ const resolvers = {
             return await Fundraiser.create({ fundraiserName, goal, fundraiserDate});
         },
         addUser: async (parent, { firstName, lastName, email, password }) => {
-            console.log(firstName);
-            return await User.create({firstName, lastName, email, password});
+            console.log(firstName, lastName, email, password);
+            const user = await User.create({firstName, lastName, email, password});
+            
+            const token = signToken(user)
+
+            return { token, user }
         },
         updateDonation: async (parent, { amount, message }) => {
             return await Donation.findOneAndUpdate(

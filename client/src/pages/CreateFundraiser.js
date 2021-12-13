@@ -1,4 +1,3 @@
-import { Button, Row, Col, Card, TextInput, Divider } from 'react-materialize';
 // import { useState } from 'react';
 // import { Link } from 'react-router-dom';
 // import { useMutation } from '@apollo/client';
@@ -9,75 +8,44 @@ import { Button, Row, Col, Card, TextInput, Divider } from 'react-materialize';
 const CreateFundraiser = () => {
 
     return (
-        <Row>
-            <Col
-                s={8}
-            >
-                <Card
-                    title="Create a Fundraiser"
-                >
-                <Divider />
-                <Row>
-                {/* Text input fields */}
-                    <Row>
-                    <TextInput
-                        id="TextInput-48"
-                        label="Title"
-                    />
-                    </Row>
-                    <Row>
-                    <TextInput
-                        id="TextInput-48"
-                        label="Location"
-                    />
-                    </Row>
-                    <Row>
-                    <TextInput
-                        id="TextInput-48"
-                        label="Goal"
-                    />
-                    </Row>
-                    <Row>
-                    <h6>Description</h6>
-                    <input type="text" className="browser-default" />
-                    </Row>
-                    <Row>
-                        <p>upload image</p>
-                        <TextInput
-                            id="TextInput-26"
-                            label="File"
-                            type="file"
-                        />
-                    </Row>
-                </Row>
-                {/* Button field */}
-                <Row>
-                    <Col
-                        m={6}
-                    >
-                        <Button
-                            id="cancel-make-donation-button"
-                            className="btn waves-effect waves-light fwb red" 
-                            type="button"
-                            name="action">
-                            Cancel
-                        </Button>
-                    </Col>
-                    <Col
-                        m={6}
-                    >
-                        <Button
-                            id="make-donation-button"
-                            className="btn waves-effect waves-light fwb green" 
-                            type="button"
-                            name="action">
-                            Submit
-                        </Button>
-                    </Col>
-                </Row>
-                </Card>
-            </Col>
-        </Row>
+        <div className="row">
+            <div className="col s12">
+            <div className="card">
+                <div className="card-content">
+                <div id="create-post-header">
+                    <span className="card-title">Create New Fundraising Campaign</span>
+                </div>
+                <div id="p-divider" className="divider" />
+                <div className="row create-fundraiser-button-row">
+                    {/* these are the text input fields */}
+                    <div className="input-field col s12 m6">
+                    <input id="fundraiser-title" type="text" className="validate" />
+                    <label htmlFor="fundraiser-title">Title</label>
+                    </div>
+                    <div className="input-field col s12 m6">
+                    <input id="fundraiser-location" type="text" className="validate" />
+                    <label htmlFor="fundraiser-location">Location</label>
+                    </div>
+                    <div className="input-field col s12 m6">
+                    <input id="fundraiser-goal" type="text" className="validate" />
+                    <label htmlFor="fundraiser-goal">$ Amount</label>
+                    </div>
+                    <div className="input-field col s12">
+                    <textarea id="fundraiser-description" className="materialize-textarea" defaultValue={""} />
+                    <label htmlFor="fundraiser-description">Description</label>
+                    </div>
+                    {/* these are the buttons */}
+                    <div className="input-field col s6">
+                    <button id="canel-create-fundraiser-button" className="btn waves-effect waves-light fwb red" type="button" name="action">Cancel</button>
+                    </div>
+                    <div className="input-field col s6">
+                    <button id="create-fundraiser-button" className="btn waves-effect waves-light fwb green" type="submit" name="action">Create</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
     );
 };
 

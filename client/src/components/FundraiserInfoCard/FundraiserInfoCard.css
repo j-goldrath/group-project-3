@@ -74,7 +74,10 @@
 } */
 
 .card-donate-button-wrapper{
-    margin-top: 15px;
+    margin-top: 0 !important;
+    width: 100% !important;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
     text-align: center;
     align-items: center;
     padding-top: 5px;
@@ -171,4 +174,8 @@
     border-top-right-radius: 3px !important;
     border-bottom-right-radius: 3px !important;
     padding-bottom: 5px;
+}
+
+.fundraiser-info-card{
+    width: 100vw;
 }

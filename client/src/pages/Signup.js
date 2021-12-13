@@ -9,13 +9,14 @@ const Signup = (props) => {
     
     const handleFormSubmit = async (event) => {
         event.preventDefault();
-        const mutationResponse = await createUser({
+        const mutationResponse = await createUser( {variables: {
+            email: formState.email,
+            password: formState.password,
             firstName: formState.firstName,
             lastName: formState.lastName,
-            email: formState.email,
-            password: formState.password
-        });
-        const token = mutationResponse.data.createUser.token;
+        }});
+        console.log(mutationResponse);
+        const token = mutationResponse.data.addUser.token;
         Auth.login(token);
     };
 

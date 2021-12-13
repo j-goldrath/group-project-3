@@ -17,6 +17,7 @@ import NoMatch from './pages/NoMatch';
 import FundraiserInfoCard from './components/FundraiserInfoCard/FundraiserInfoCard';
 import Donate from './pages/Donate';
 import Login from './pages/Login';
+import CreateFundraiser from './pages/CreateFundraiser';
 const httpLink = createHttpLink({
   uri: '/graphql',
   credentials: 'same-origin'
@@ -49,6 +50,7 @@ function App() {
               <Route exact path="/login" element={<Login/>}/>
               <Route exact path="/fundraiserInfoCard" element={<FundraiserInfoCard/>}/>
               <Route exact path="/donate" element={<Donate/>}/>
+              <Route exact path="/createFundraiser" element={<CreateFundraiser/>}/>
               <Route element={<NoMatch/>} />
             </Routes>
           <Footer />
