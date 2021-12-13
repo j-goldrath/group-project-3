@@ -9,15 +9,13 @@ import { setContext } from '@apollo/client/link/context';
 //materialize
 import 'materialize-css';
 
-import Home from './pages/Home';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
 import Signup from './pages/Signup';
-import FundraiserCard from './components/FundraiserCard/FundraiserCard'
-import DonationForm from './components/DonationForm';
+import Home from './components/FundraiserCard/FundraiserCard'
 import NoMatch from './pages/NoMatch';
 import FundraiserInfoCard from './components/FundraiserInfoCard/FundraiserInfoCard';
-import LoginSignup from './components/LoginSignup/LoginSignup'
+import Login from './pages/Login';
 const httpLink = createHttpLink({
   uri: '/graphql',
 });
@@ -41,13 +39,13 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <LoginSignup />
+        <Nav />
         <div>
             <Routes>
-              <Route exact path="/" component={Home} />
-              <Route exact path="signup" component={Signup}/>
-              <Route component={NoMatch} />
-              <Route exact path="fundraiserCard" component={FundraiserCard}/>
+              <Route exact path="/" element={<Home/>} />
+              <Route exact path="signup" element={<Signup/>}/>
+              <Route exact path="login" element={<Login/>}/>
+              <Route element={<NoMatch/>} />
             </Routes>
           <Footer />
         </div>

@@ -1,10 +1,8 @@
-import FundraiserList from "../components/FundraiserList";
+import FundraiserCard from "../components/FundraiserCard/FundraiserCard";
 
 const Home = () => {
     return (
-        <div className="container">
-            <FundraiserList />
-        </div>
+        <FundraiserCard />
     );
 };
 
