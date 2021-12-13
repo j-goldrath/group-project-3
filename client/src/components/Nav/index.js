@@ -23,7 +23,7 @@ const Nav = () => {
                 }}>
                 {/* Prints this if user is logged in */}
                 <NavItem href="/createFundraiser">
-                    Make Fundraiser
+                    Create a Fundraiser
                 </NavItem>
                 <NavItem onClick={Auth.logout} href="/">
                     Logout
