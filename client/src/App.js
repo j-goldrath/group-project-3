@@ -43,7 +43,6 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <Nav />
-        <div>
             <Routes>
               <Route exact path="/" element={<Home/>} />
               <Route exact path="/signup" element={<Signup/>}/>
@@ -53,8 +52,7 @@ function App() {
               <Route exact path="/createFundraiser" element={<CreateFundraiser/>}/>
               <Route element={<NoMatch/>} />
             </Routes>
-          <Footer />
-        </div>
+        <Footer />
       </Router>
     </ApolloProvider>
   );

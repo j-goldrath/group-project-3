@@ -5,10 +5,8 @@ import charity from './charity-cleanup.jpg';
 
 function FundraiserInfoCard(props) {
     return (
-        <>
         <div className="fundraiser-info-card">
             {/* <!-- charity/cause info card component --> */}
-            <div className="row">
 
                 <div className="col s12">
                     <div className="card">
@@ -95,8 +93,6 @@ function FundraiserInfoCard(props) {
                     </div>
                 </div>
             </div>
-        </div>
-        </>
     )
 }
 
