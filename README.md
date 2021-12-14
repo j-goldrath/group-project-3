@@ -9,17 +9,45 @@ https://github.com/j-goldrath/group-project-3
 
 [Installation](#Installation)
 
+[Technologies](#Technologies)
+
 [Usage](#Usage)
 
 [License](#License)
 
 [Contact](#Contact)
 
+[Contribution](#Contribution)
+
 ## Description
-A react website that features and allows for creation of fundraisers that focus towards cleaning and bettering the world.
+<img src="./assets/images/cleanEarth.jpq" align="righ" alt="clean the earth" height="178">
+
+Helpr is a website that features and allows for creation of fundraisers that focus towards cleaning and bettering the world.
+
+### Inspiration
+
+It is estimated that over 1 million marine animals are killed each year due to plastic debris in our oceans. It is also estimated that at least 100,000 land animals die from human litter annually.
+
+We believe that this is unjust, not only for the animals, but for humans as well. All communities should have access to clean resources, whether that's a clean beach to swim in, a clean park to take children to, or just walking on a clean sidewalk. We saw that things were being done in a large-scale, and while we support that, we wanted a place for smaller communities to get support as well. 
 
 ## Installation
 Run 'npm install' in your terminal
+
+## Technologies
+
+React
+
+Graphql
+
+Apollo-Client
+
+Mongoose
+
+Stripe
+
+Bcrypt
+
+JSON Web Token
 
 ## Usage
 You can use the deployed Heroku link above.
@@ -83,8 +111,12 @@ https://github.com/ayonsa60
 Email: 
 
 
-Cam Mcdougall:
+Cameron Mcdougall:
 
 https://github.com/CJMc0d3
 
 Email: 
+
+## Contribution
+
+For any contribution or questions, please create an issue.
