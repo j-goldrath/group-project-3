@@ -1,6 +1,6 @@
 # Helpr
 
-http://aqueous-atoll-40596.herokuapp.com/
+https://aqueous-atoll-40596.herokuapp.com/
 
 https://github.com/j-goldrath/group-project-3
 
@@ -110,20 +110,20 @@ Jonathan Goldrath:
 
 https://github.com/j-goldrath
 
-Email:
+Email: jonathan.goldrath@gmail.com
 
 Salvador Ayon:
 
 https://github.com/ayonsa60
 
-Email: 
+Email: ayonsa60@gmail.com
 
 
 Cameron Mcdougall:
 
 https://github.com/CJMc0d3
 
-Email: 
+Email: cammcd35@gmail.com
 
 ## Contribution
 
