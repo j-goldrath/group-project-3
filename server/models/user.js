@@ -4,7 +4,7 @@ const { Schema } = mongoose;
 
 const bcrypt = require('bcrypt');
 const Fundraiser = require('./fundraiser');
-const Donation = require('./Donation');
+const Donation = require('./donation');
 
 const userSchema = new Schema({
 
