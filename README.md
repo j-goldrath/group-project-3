@@ -20,7 +20,7 @@ https://github.com/j-goldrath/group-project-3
 [Contribution](#Contribution)
 
 ## Description
-<img src="./assets/images/cleanEarth.jpq" align="righ" alt="clean the earth" height="178">
+<img src="./assets/images/cleanEarth.jpg" align="right" alt="clean the earth" height="178">
 
 Helpr is a website that features and allows for creation of fundraisers that focus towards cleaning and bettering the world.
 
