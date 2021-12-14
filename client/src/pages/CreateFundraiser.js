@@ -36,7 +36,9 @@ const CreateFundraiser = () => {
                     </div>
                     {/* these are the buttons */}
                     <div className="input-field col s6">
-                    <button id="canel-create-fundraiser-button" className="btn waves-effect waves-light fwb red" type="button" name="action">Cancel</button>
+                    <a href="/">
+                    <button id="cancel-create-fundraiser-button" className="btn waves-effect waves-light fwb red" type="button" name="action">Cancel</button>
+                    </a>
                     </div>
                     <div className="input-field col s6">
                     <button id="create-fundraiser-button" className="btn waves-effect waves-light fwb green" type="submit" name="action">Create</button>

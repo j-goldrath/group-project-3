@@ -1,70 +1,90 @@
-# Getting Started with Create React App
+# Helpr
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+http://aqueous-atoll-40596.herokuapp.com/
 
-## Available Scripts
+https://github.com/j-goldrath/group-project-3
 
-In the project directory, you can run:
+# Table of Content
+[Description](#Description)
 
-### `npm start`
+[Installation](#Installation)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+[Usage](#Usage)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+[License](#License)
 
-### `npm test`
+[Contact](#Contact)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Description
+A react website that features and allows for creation of fundraisers that focus towards cleaning and bettering the world.
 
-### `npm run build`
+## Installation
+Run 'npm install' in your terminal
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Usage
+You can use the deployed Heroku link above.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Upon visiting the website, you can sign up or login if you're a returning user via the dropdown button on the navbar.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+On the homepage you will see two different types of fundraisers. 
 
-### `npm run eject`
+The first type of fundraiser you'll see are fundraisers made via our app. This is an example of one:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+![fundraiser card example](./assets/images/readme1.jpg)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+You can see the title of the fundraiser, where it'll take place, the donation goal, and a donate button. The card as a whole is clickable and will redirect you to a page with just the fundraiser.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+![fundraiser info example](./assets/images/readme2.jpg)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Here you can see the same details, but you can also see the recent donators. Upon clicking the donate button either on the homepage or the info page, you will be redirected to a page where you could declare how much you would like to donate to the fundraiser. 
 
-## Learn More
+![donate form example](./assets/images/readme3.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+You'll declare how much you would like to donate in the text field labelled "$ Amount". After declaring the amount you would like to donate, you can click on the donate button to donate, or if you change your mind, you can click on the cancel button to be redirect to the homepage.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The second type of fundraisers on our app are well known fundraisers or charities that we ourselves believe are doing good for the world. They have the same display as the other fundraisers. 
 
-### Code Splitting
+![well known fundraiser #TeamSeas](./assets/images/readme4.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+The difference between this type of fundraiser and ones created on our website is that clicking on the card or the donate button on these will redirect you to the official website of the fundraiser. 
 
-### Analyzing the Bundle Size
+![#TeamSeas official website](./assets/images/readme5.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+To create a fundraiser on our app, on the top right side of the navbar there is a "Create a Fundraiser" nav item that will redirect you to a form to create a fundraiser. 
 
-### Making a Progressive Web App
+![Create a Fundraiser on nav](./assets/images/readme6.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+![Create a fundraiser form](./assets/images/readme7.png)
 
-### Advanced Configuration
+All you have to do is fill out the information and click create. This will redirect you to the home page where your fundraiser will render as well. 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+(App is not yet fully functional)
 
-### Deployment
+## License
+[![License: ISC](https://img.shields.io/badge/License-ISC-yellow.svg)](https://opensource.org/licenses/ISC)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Contact
+Matthew Nguyen:
 
-### `npm run build` fails to minify
+https://github.com/mnguyen14
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Email: matthewnguyen0814@gmail.com
+
+Jonathan Goldrath:
+
+https://github.com/j-goldrath
+
+Email:
+
+Salvador Ayon:
+
+https://github.com/ayonsa60
+
+Email: 
+
+
+Cam Mcdougall:
+
+https://github.com/CJMc0d3
+
+Email: 

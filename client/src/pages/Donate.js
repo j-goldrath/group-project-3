@@ -30,7 +30,9 @@ function Donate(props) {
                         </div>
                         {/* these are the buttons */}
                         <div className="input-field col s6">
+                        <a href="/">
                         <button id="canel-make-donation-button" className="btn waves-effect waves-light fwb red" type="button" name="action">Cancel</button>
+                        </a>
                         </div>
                         <div className="input-field col s6">
                         <button id="make-donation-button" className="btn waves-effect waves-light fwb green" type="submit" name="action">Donate</button>
