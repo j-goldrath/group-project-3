@@ -120,7 +120,7 @@ function FundraiserCard(props) {
                         <span className="card-title fundraiser-card-subtitle">Globally</span>
                         {/* <!-- this is the fundraiser description section --> */}
                         <p className="fundraiser-card-description" id="fundraiser-card-description">
-                            $1 plants a tree. YouTubers MrBeast and Mark Robert millions state #TeamTrees to planet trees all over the world. Click the card to get the latest info on #TeamTrees latest projects.
+                            $1 plants a tree. YouTubers MrBeast and Mark Robert start #TeamTrees to planet trees all over the world. Click the card to get the latest info on #TeamTrees latest projects.
                         </p>
 
                         {/* <!-- this is the fundraiser progress bar section --> */}

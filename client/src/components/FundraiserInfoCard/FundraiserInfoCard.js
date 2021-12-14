@@ -24,11 +24,15 @@ function FundraiserInfoCard(props) {
                                     {/* <!-- this is the fundraiser location section --> */}
                                     <span className="card-title fundraiser-card-subtitle">Chicago, IL</span>
                                     {/* <!-- this is the fundraiser description section --> */}
-                                    <p id="fundraiser-card-description">We are raising funds to help cleanup and
-                                        revitalize
-                                        the neighborhood park. If we all chip in a little bit we can make this
-                                        neighborhood
-                                        a better place to live.</p>
+                                    <p id="fundraiser-card-description">
+                                        We are raising funds to help cleanup and revitalize the neighborhood park. If we all chip in a little bit we can make this neighborhood a better place to live.
+                                    </p>
+                                    <p>
+                                        We need your help getting the resources to clean up Buttercup Park, Hickory Park, and Margate Park. If you would like to volunteer for cleaning, we will be meeting at Margate Park on December 20th, 2021 at 9 A.M. We will begin cleaning there and once done we will be moving to Buttercup Park then Hickory Park.
+                                    </p>
+                                    <p>
+                                        *This is a mock-up fundraiser, please do not attend*
+                                    </p>
                                 </div>
                             </div>
 

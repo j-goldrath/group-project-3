@@ -50,9 +50,15 @@ Bcrypt
 JSON Web Token
 
 ## Usage
-You can use the deployed Heroku link above.
+Run 'npm run develop' in your terminal to use via localhost
+
+or
+
+Use the deployed Heroku link above
 
 Upon visiting the website, you can sign up or login if you're a returning user via the dropdown button on the navbar.
+
+![login and signup pages](./assets/images/loginSignup.gif)
 
 On the homepage you will see two different types of fundraisers. 
 
@@ -60,7 +66,7 @@ The first type of fundraiser you'll see are fundraisers made via our app. This i
 
 ![fundraiser card example](./assets/images/readme1.jpg)
 
-You can see the title of the fundraiser, where it'll take place, the donation goal, and a donate button. The card as a whole is clickable and will redirect you to a page with just the fundraiser.
+You can see the title of the fundraiser, where it'll take place, the donation goal, and a donate button. The card as a whole is clickable and will redirect you to a page with more information on the fundraiser.
 
 ![fundraiser info example](./assets/images/readme2.jpg)
 
@@ -70,15 +76,15 @@ Here you can see the same details, but you can also see the recent donators. Upo
 
 You'll declare how much you would like to donate in the text field labelled "$ Amount". After declaring the amount you would like to donate, you can click on the donate button to donate, or if you change your mind, you can click on the cancel button to be redirect to the homepage.
 
-The second type of fundraisers on our app are well known fundraisers or charities that we ourselves believe are doing good for the world. They have the same display as the other fundraisers. 
+The second type of fundraisers on our app are large-scale, non-profit fundraisers or charities that we ourselves believe are doing good for the world. They have the same display as fundraisers created on our page. 
 
 ![well known fundraiser #TeamSeas](./assets/images/readme4.png)
 
-The difference between this type of fundraiser and ones created on our website is that clicking on the card or the donate button on these will redirect you to the official website of the fundraiser. 
+The difference between these fundraisers and ones created on our website is that clicking on the card or the donate button on these will redirect you to the official website of the fundraiser. 
 
 ![#TeamSeas official website](./assets/images/readme5.png)
 
-To create a fundraiser on our app, on the top right side of the navbar there is a "Create a Fundraiser" nav item that will redirect you to a form to create a fundraiser. 
+To create a fundraiser on our app, on the right side of the navbar there is a "Create a Fundraiser" option that will redirect you to a form to create a fundraiser. 
 
 ![Create a Fundraiser on nav](./assets/images/readme6.png)
 
@@ -89,7 +95,7 @@ All you have to do is fill out the information and click create. This will redir
 (App is not yet fully functional)
 
 ## License
-[![License: ISC](https://img.shields.io/badge/License-ISC-yellow.svg)](https://opensource.org/licenses/ISC)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Contact
 Matthew Nguyen:
