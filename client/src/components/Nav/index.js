@@ -7,7 +7,7 @@ const Nav = () => {
             {Auth.loggedIn() ? (
                 <><Navbar
                 alignLinks="right"
-                brand={<a className="brand-logo" href="#">Helpr</a>}
+                brand={<a className="brand-logo" href="/">Helpr</a>}
                 id="mobile-nav"
                 menuIcon={<Icon>menu</Icon>}
                 options={{
