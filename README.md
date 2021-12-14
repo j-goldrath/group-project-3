@@ -56,7 +56,7 @@ or
 
 Use the deployed Heroku link above
 
-Upon visiting the website, you can sign up or login if you're a returning user via the dropdown button on the navbar.
+Upon visiting the website, you can sign up or login if you're a returning user via the dropdown button on the navbar. On a mobile device you can access sign up and login by clicking on the hamburger menu on the left side of the nav.
 
 ![login and signup pages](./assets/images/loginSignup.gif)
 
@@ -84,13 +84,15 @@ The difference between these fundraisers and ones created on our website is that
 
 ![#TeamSeas official website](./assets/images/readme5.png)
 
-To create a fundraiser on our app, on the right side of the navbar there is a "Create a Fundraiser" option that will redirect you to a form to create a fundraiser. 
+To create a fundraiser on our app, on the right side of the navbar there is a "Create a Fundraiser" option that will redirect you to a form to create a fundraiser. On mobile you'll be able to access this by clicking on the hamburger menu on the left side of the nav.
 
 ![Create a Fundraiser on nav](./assets/images/readme6.png)
 
 ![Create a fundraiser form](./assets/images/readme7.png)
 
 All you have to do is fill out the information and click create. This will redirect you to the home page where your fundraiser will render as well. 
+
+At any location on the site, if you click, "Helpr" on the navbar, you will be return to the homepage.
 
 (App is not yet fully functional)
 
