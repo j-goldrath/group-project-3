@@ -3,8 +3,8 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const bcrypt = require('bcrypt');
-const Fundraiser = require('./fundraiser');
-const Donation = require('./donation');
+const Fundraiser = require('./Fundraiser');
+const Donation = require('./Donation');
 
 const userSchema = new Schema({
 
@@ -46,6 +46,6 @@ userSchema.methods.isCorrectPassword = async function (password) {
     return await bcrypt.compare(password, this.password);
 };
 
-const User = mongoose.mondel('user', userSchema);
+const User = mongoose.model('user', userSchema);
 
 module.exports = User;

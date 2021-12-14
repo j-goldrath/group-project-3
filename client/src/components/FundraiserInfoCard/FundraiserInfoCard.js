@@ -7,7 +7,6 @@ function FundraiserInfoCard(props) {
     return (
         <div className="fundraiser-info-card">
             {/* <!-- charity/cause info card component --> */}
-            <div className="row">
 
                 <div className="col s12">
                     <div className="card">
@@ -78,8 +77,15 @@ function FundraiserInfoCard(props) {
                                                     className=" secondary-content right-align">$100.00</div>
                                                 </li>
                                             </ul>
-
                                         </div>
+                                    </div>
+
+                                    <div>
+                                        <a id="card-make-donation-button" href="/donate">
+                                                    <div className="card-donate-button-wrapper green white-text">
+                                                        <h5 className="center-align">MAKE A DONATION</h5>
+                                                    </div>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -87,7 +93,6 @@ function FundraiserInfoCard(props) {
                     </div>
                 </div>
             </div>
-        </div>
     )
 }
 

@@ -17,8 +17,10 @@ import NoMatch from './pages/NoMatch';
 import FundraiserInfoCard from './components/FundraiserInfoCard/FundraiserInfoCard';
 import Donate from './pages/Donate';
 import Login from './pages/Login';
+import CreateFundraiser from './pages/CreateFundraiser';
 const httpLink = createHttpLink({
   uri: '/graphql',
+  credentials: 'same-origin'
 });
 
 const authLink = setContext((_, { headers }) => {
@@ -41,17 +43,16 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <Nav />
-        <div>
             <Routes>
               <Route exact path="/" element={<Home/>} />
               <Route exact path="/signup" element={<Signup/>}/>
               <Route exact path="/login" element={<Login/>}/>
               <Route exact path="/fundraiserInfoCard" element={<FundraiserInfoCard/>}/>
               <Route exact path="/donate" element={<Donate/>}/>
+              <Route exact path="/createFundraiser" element={<CreateFundraiser/>}/>
               <Route element={<NoMatch/>} />
             </Routes>
-          <Footer />
-        </div>
+        <Footer />
       </Router>
     </ApolloProvider>
   );

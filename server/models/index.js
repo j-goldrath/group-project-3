@@ -1,6 +1,6 @@
-const user = require('./user');
-const Fundraiser = require('./fundraiser');
-const Donation = require('./donation');
+const User = require('./User');
+const Fundraiser = require('./Fundraiser');
+const Donation = require('./Donation');
 
 
-module.exports = { user, Fundraiser, Donation };
+module.exports = { User, Fundraiser, Donation };
