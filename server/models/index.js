@@ -1,5 +1,5 @@
 const User = require('./user');
-const Fundraiser = require('./Fundraiser');
+const Fundraiser = require('./fundraiser');
 const Donation = require('./Donation');
 
 

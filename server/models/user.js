@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const bcrypt = require('bcrypt');
-const Fundraiser = require('./Fundraiser');
+const Fundraiser = require('./fundraiser');
 const Donation = require('./Donation');
 
 const userSchema = new Schema({
